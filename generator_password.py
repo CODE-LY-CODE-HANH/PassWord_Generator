@@ -78,8 +78,8 @@ lb = tk.Label(window , text = "App Tạo Mật Khẩu" , fg= 'red' , font= ("Ari
 lb.grid(column= 1 , row = 0)
 
 # Label
-lb = tk.Label(window , text = "Nhập độ dài mật khẩu " , fg= 'green' , font= ("Arial" , 14))
-lb.grid(column= 1 , row = 1)
+lb_2 = tk.Label(window , text = "Nhập độ dài mật khẩu " , fg= 'green' , font= ("Arial" , 14))
+lb_2.grid(column= 1 , row = 1)
 
 v = tk.StringVar()
 def setText(word):
