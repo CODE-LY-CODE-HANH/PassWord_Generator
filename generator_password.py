@@ -10,6 +10,7 @@ NUMBERS = string.digits
 
 punctuation = string.punctuation
 
+# Hàm chức năng tạo mật khẩu
 def password_generator(length = 8 , chu = False , so = False , ky_tu = False):
     chuoi = None
     if chu and so and ky_tu:
@@ -51,15 +52,13 @@ def password_generator(length = 8 , chu = False , so = False , ky_tu = False):
     random_password = ''.join(random_password)
 
     return str(random_password)
-
-password_generator(10 , chu= True , so= True , ky_tu= False)
-
+# hàm lấy trạng thái checkBox
 def get_check_box(a):
     if a == 0:
         return False
     elif a == 1:
         return True
-
+# hàm kiểm tra nhập số
 def validation(txt):
     if str(txt).isdigit():
         return int(str(txt) )
@@ -68,7 +67,7 @@ def validation(txt):
         messagebox.showinfo("Thông Báo" , 'Phải nhập số !!!' )
         return 0
 
-
+# Tạo giao diện
 window = Tk()
 window.title("Generator PassWord")
 # window.geometry("1280x720")
@@ -81,17 +80,18 @@ lb.grid(column= 1 , row = 0)
 lb_2 = tk.Label(window , text = "Nhập độ dài mật khẩu " , fg= 'green' , font= ("Arial" , 14))
 lb_2.grid(column= 1 , row = 1)
 
+# Entry ( ô nhập )
+txt = tk.Entry(window , width= 40 , font= ('Arial' , 16) )
+txt.grid(column= 1, row = 2)
+
 v = tk.StringVar()
 def setText(word):
     v.set(word)
 
-txt = tk.Entry(window , width= 40 , font= ('Arial' , 15) )
-txt.grid(column= 1, row = 2)
-
-# Label
-txt_2 = tk.Entry(window , width= 40 , font= ('Arial' , 15) ,textvariable=v)
+txt_2 = tk.Entry(window , width= 40 , font= ('Arial' , 16) ,textvariable= v , fg = 'blue')
 txt_2.grid(column= 1 , row = 9)
 
+# var là biến giúp ta lấy trạng thái checkBox
 var = tk.IntVar()
 c1 = tk.Checkbutton(window, text='Chữ' , variable=var , font = ('Arial' , 15) )
 c1.grid(column= 1 , row = 4)
