@@ -1,0 +1,4 @@
+-- Chuyển đổi sang exe với lệnh :
+    pyinstaller --onefile Tên file.py
+
+    pyinstaller --onefile -w Tên file.py
